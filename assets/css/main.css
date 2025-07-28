@@ -1,40 +1,163 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 * {
-  margin: 0;
-  padding: 0;
-  border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
 }
+
 :root {
-  font-family: 'Fira Code';
-  --background-color: #0b0b0b;
-  --color-green: #33ff33;
-  --font-color: #eeeeec;
+    --color-green: #07ffc8;
+    --color-blue: #00ecff;
+    --color-blue-2: #001629;
+    --color-gray: #111111;
+    --color-gray-2: #070707;
+    --color-font-terminal: #a2a2a2;
+    font-family: 'Nunito';
+}
+@keyframes cima-baixo {
+    0% {
+        top: -10px;
+    }
+    50% {
+        top: 0px;
+    }
+    100% {
+        top: -10px;
+    }
+}
+@keyframes baixo-cima {
+    0% {
+        bottom: -10px;
+    }
+    50% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: -10px;
+    }
+}
+h1,h2,h3,h4 {
+    font-family: 'Chakra Petch';
+}
+a {
+    color: var(--color-blue);
+}
+::selection {
+    background: var(--color-blue);
+    color: var(--color-gray);
+}
+.terminal {
+    font-size: 1rem;
+    line-height: 1.2;
+    font-family: 'Ubuntu Mono';
+    color: var(--color-font-terminal);
+}
+.terminal::before {
+    content: '>> ';
+    color: var(--color-font-terminal);
+}
+main {
+    max-width: 880px;
+    margin-inline: auto;
+}
+.no-bold {
+    font-weight: normal;
 }
 body {
-  background: var(--background-color);
-  color: var(--font-color);
-  width: 100vw;
-  height: 100%;
+    background: var(--color-gray-2);
+    color: white;
 }
-.menu-principal {
-  height: 110px;
-  width: 100%;
+.banner {
+    display: flex;
+    padding: 4.5%;
+    margin-bottom: 45px;
 }
-span.green {
-  color: var(--color-green);
+.banner .img img {
+    height: 150px;
 }
-.menu-principal ul {
-  display: flex;
-  padding-block: 20px;
-  padding-inline: 70px;
-  width: 50%;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
+.banner .text {
+    width: 50%;
 }
-.banner > h1, p{
-  font-size: 24px;
-  font-weight: normal;
+.banner .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.banner h1 {
+    margin-top: 2.5%;
+    margin-bottom: 5%;
+    font-size: 2.5rem;
+}
+.perfil-git-hub {
+    padding: 10px 25px;
+    border: 1px solid var(--color-blue);
+    background: none;
+    color: var(--color-blue);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.07rem;
+    margin-top: 25px;
+    font-family: 'Chakra Petch';
+}
+.sobre {
+    display: flex;
+    justify-content: space-between;
+    padding: 4%;
+}
+.sobre .content {
+    background: var(--color-blue-2);
+    border-radius: 17px;
+    padding-block: 25px;
+    padding-inline: 15px;
+    position: relative;
+    width: 45%;
+    z-index: -1;
+}
+.sobre .content img.top {
+    position: absolute;
+    top: -10px;
+    left: 17px;
+    height: 15px;
+    animation: 5s cima-baixo linear infinite;
+}
+.sobre .content img.bottom {
+    position: absolute;
+    bottom: -10px;
+    right: 17px;
+    height: 15px;
+    animation: 5s baixo-cima linear infinite;
+}
+.sobre h2 {
+    margin-bottom: 10px;
+}
+.sobre p {
+    line-height: 1.5;
+}
+@media only screen and (max-width: 1000px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+    .terminal {
+        font-size: 0.85rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .banner {
+        flex-direction: column;
+    }
+    .banner .text,.img {
+        width: 100%;
+    }
+    .sobre {
+        flex-direction: column;
+    }
+    .sobre .content {
+        width: 100%;
+    }
 }
