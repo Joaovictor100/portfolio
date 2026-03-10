@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+Bengali:wght@100..900&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -8,13 +7,11 @@
 }
 
 :root {
-    --color-green: #07ffc8;
-    --color-blue: #00ecff;
-    --color-blue-2: #001629;
-    --color-back-terminal: #0f0f0f;
-    --color-gray: #111111;
-    --color-gray-2: #070707;
-    --color-font-terminal: #a2a2a2;
+    --color-1: #00ecff;
+    --color-2: #0a1a27;
+    --color-3: #768aa5;
+    --color-4: #d8d8d8;
+    --color-5: #aaaaaa;
     font-family: 'Fira Code';
 }
 
@@ -25,58 +22,71 @@ a {
     color: var(--color-blue);
 }
 ::selection {
-    background: var(--color-blue);
-    color: var(--color-gray);
+    background: var(--color-2);
+    color: var(--color-1);
 }
 .terminal {
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.2;
-    font-family: 'Fira Code';
-    color: var(--color-font-terminal);
-}
-span.blue {
-    color: var(--color-blue);
+    font-family: 'JetBrains Mono';
 }
 .terminal::before {
     content: '>> ';
-    color: var(--color-font-terminal);
 }
-main {
-    max-width: 880px;
-    margin-inline: auto;
+.terminal::after {
+    content: '_';
+    color: var(--color-1);
+}
+.text-term-color-1 {
+    font-family: 'JetBrains Mono';
+    color: var(--color-1);
 }
 .no-bold {
     font-weight: normal;
 }
 body {
-    background: var(--color-gray-2);
-    color: white;
+    background: linear-gradient(-45deg, var(--color-2), #03070a, #060d13, #03070a, var(--color-2));
+    background-size: 400% 400%;
+    color: var(--color-3);
+    animation: moverBackg 10s ease infinite alternate;
+}
+
+@keyframes moverBackg {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 .banner {
     display: flex;
-    padding: 4.5%;
-    margin-bottom: 45px;
+    margin-block: 45px;
+    padding-block: 50px;
+    padding-inline: 10%;
+    width: 100vw;
 }
-.banner .img img {
-    height: 150px;
-}
-.banner .text {
-    width: 50%;
-}
-.banner .img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-}
+
+
 .banner h1 {
-    margin-top: 2.5%;
-    margin-bottom: 5%;
-    font-size: 2.5rem;
+    margin-top: 15px;
+    font-size: calc(5vw + 14px);
+    font-family: 'Noto Sans Bengali';
+    color: var(--color-4);
+    font-weight: 900;
+}
+.banner h2 {
+    font-size: calc(5vw + 9px);
+    font-family: 'Noto Sans Bengali';
+    font-weight: 900;
+    color: var(--color-5);
+    margin-bottom: 40px;
 }
 .perfil-git-hub {
     padding: 10px 25px;
-    border: 1px solid var(--color-blue);
     background: none;
     color: var(--color-blue);
     text-transform: uppercase;
@@ -92,7 +102,6 @@ body {
     padding: 4%;
 }
 .sobre .content {
-    background: var(--color-back-terminal);
     border-radius: 17px;
     padding-block: 25px;
     padding-inline: 15px;
@@ -106,9 +115,6 @@ body {
     font-size: 16px;
 }
 @media only screen and (max-width: 1000px) {
-    .banner h1 {
-        font-size: 2rem;
-    }
     .terminal {
         font-size: 0.85rem;
     }

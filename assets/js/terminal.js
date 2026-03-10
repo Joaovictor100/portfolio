@@ -1,9 +1,7 @@
 const terminalText = document.querySelector('#terminal-text');
 
 const frases = [
-    'Sou Desenvolvedor de Sistemas',
-    'Aprendizado constante',
-    'Foco em linguagens de baixo nível'
+    'Esse é o meu portifólio, onde você vera minhas habilidades, projetos e experiencias que tenho vivido ao longo da minha carreira profissional'
 ];
 
 frases.forEach((frase, index) => {
