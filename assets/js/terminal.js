@@ -15,8 +15,10 @@ frases.forEach((frase, index) => {
             p.innerHTML += frase[i];
             i++;
             setTimeout(adicionarCaracter, 40);
+        }else {
+            p.classList.add('remove-underline');
         }
     }
-
     setTimeout(adicionarCaracter, 3000 * index);
 });
+

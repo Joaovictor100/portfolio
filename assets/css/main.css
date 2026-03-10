@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+Bengali:wght@100..900&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@
     --color-2: #0a1a27;
     --color-3: #768aa5;
     --color-4: #d8d8d8;
-    --color-5: #aaaaaa;
+    --color-5: #96afcf;
     font-family: 'Fira Code';
 }
 
@@ -25,17 +25,24 @@ a {
     background: var(--color-2);
     color: var(--color-1);
 }
+#terminal-text {
+    display: flex;
+    height: 100px;
+}
 .terminal {
     font-size: 16px;
     line-height: 1.2;
     font-family: 'JetBrains Mono';
+    width: 50%;
 }
 .terminal::before {
     content: '>> ';
 }
 .terminal::after {
     content: '_';
-    color: var(--color-1);
+}
+.remove-underline::after {
+    content: '.';
 }
 .text-term-color-1 {
     font-family: 'JetBrains Mono';
@@ -64,23 +71,22 @@ body {
 }
 .banner {
     display: flex;
-    margin-block: 45px;
-    padding-block: 50px;
-    padding-inline: 10%;
+    padding-block: 60px;
+    padding-inline: 15%;
     width: 100vw;
 }
 
 
 .banner h1 {
-    margin-top: 15px;
-    font-size: calc(5vw + 14px);
-    font-family: 'Noto Sans Bengali';
+    margin-top: 25px;
+    font-size: calc(4vw + 14px);
+    font-family: 'Google Sans';
     color: var(--color-4);
     font-weight: 900;
 }
 .banner h2 {
-    font-size: calc(5vw + 9px);
-    font-family: 'Noto Sans Bengali';
+    font-size: calc(4vw + 14px);
+    font-family: 'Google Sans';
     font-weight: 900;
     color: var(--color-5);
     margin-bottom: 40px;
