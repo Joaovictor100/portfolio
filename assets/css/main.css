@@ -19,7 +19,7 @@ h1,h2,h3,h4 {
     font-family: 'Chakra Petch';
 }
 a {
-    color: var(--color-blue);
+    color: var(--color-1);
 }
 ::selection {
     background: var(--color-2);
@@ -27,13 +27,16 @@ a {
 }
 #terminal-text {
     display: flex;
-    height: 100px;
+    height: calc(12vw + 10px);
+    width: 50%;
+}
+main {
+    max-width: 100%;
 }
 .terminal {
     font-size: 16px;
     line-height: 1.2;
     font-family: 'JetBrains Mono';
-    width: 50%;
 }
 .terminal::before {
     content: '>> ';
@@ -71,9 +74,9 @@ body {
 }
 .banner {
     display: flex;
-    padding-block: 60px;
+    padding-block: 90px;
     padding-inline: 15%;
-    width: 100vw;
+    width: 100%;
 }
 
 
@@ -81,62 +84,81 @@ body {
     margin-top: 25px;
     font-size: calc(4vw + 14px);
     font-family: 'Google Sans';
+    line-height: calc(5vw, + 5px);
     color: var(--color-4);
     font-weight: 900;
 }
 .banner h2 {
     font-size: calc(4vw + 14px);
     font-family: 'Google Sans';
+    line-height: calc(5vw, + 5px);
     font-weight: 900;
     color: var(--color-5);
     margin-bottom: 40px;
 }
 .perfil-git-hub {
-    padding: 10px 25px;
-    background: none;
-    color: var(--color-blue);
+    background-color: rgba(255, 255, 255, 0.021);
+    backdrop-filter: blur(15px);
+    width: min-content;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 0.07rem;
     margin-top: 25px;
     font-family: 'Chakra Petch';
+    border: 1px solid var(--color-1);
 }
+.banner a {
+    text-decoration: none;
+    width: max-content;
+    display: block;
+    padding: 10px 25px;
+}
+
 .sobre {
-    display: flex;
-    justify-content: space-between;
-    padding: 4%;
+    width: 100%;
 }
 .sobre .content {
-    border-radius: 17px;
-    padding-block: 25px;
-    padding-inline: 15px;
-    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.sobre h2 {
-    margin-bottom: 10px;
+.sobre img {
+    width: 30%;
 }
-.sobre p {
-    line-height: 1.4;
-    font-size: 16px;
-}
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1300px) {
     .terminal {
         font-size: 0.85rem;
     }
+    #terminal-text {
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #terminal-text {
+        height: 200px;
+        width: 100%;
+    }
+    body {
+        font-size: 0.9rem;
+    }
+    .banner h1 {
+        font-size: 3rem;
+    }
+    .banner h2 {
+        font-size: 3rem;
+    }
 }
 
-@media only screen and (max-width: 800px) {
-    .banner {
-        flex-direction: column;
-    }
-    .banner .text,.img {
+@media only screen and (max-width: 500px) {
+    #terminal-text {
+        height: 200px;
         width: 100%;
     }
-    .sobre {
-        flex-direction: column;
+    .banner h1 {
+        font-size: 2.5rem;
     }
-    .sobre .content {
-        width: 100%;
+    .banner h2 {
+        font-size: 2.5rem;
     }
 }

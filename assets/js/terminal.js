@@ -1,7 +1,7 @@
 const terminalText = document.querySelector('#terminal-text');
 
 const frases = [
-    'Esse é o meu portifólio, onde você vera minhas habilidades, projetos e experiencias que tenho vivido ao longo da minha carreira profissional'
+    'Possuo formação técnica em Desenvolvimento de Sistemas e, durante minha trajetória, tenho aprimorado habilidades e acumulado experiência no campo. Neste espaço, você poderá acessar meus projetos, habilidades, um resumo da minha trajetória e os objetivos que orientam minha carreira profissional'
 ];
 
 frases.forEach((frase, index) => {
