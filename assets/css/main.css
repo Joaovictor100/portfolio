@@ -57,7 +57,7 @@ main {
     font-weight: normal;
 }
 body {
-    background: linear-gradient(-45deg, var(--color-2), #03070a, #060d13, #03070a, var(--color-2));
+    background: linear-gradient(-45deg, var(--color-2), #03070a, #071018, #071018, #03070a, var(--color-2));
     background-size: 400% 400%;
     color: var(--color-3);
     animation: moverBackg 10s ease infinite alternate;
@@ -128,11 +128,12 @@ body {
 }
 .sobre .content {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 .sobre img {
-    width: 30%;
+    width: 20vw;
+    border-radius: 20px;
 }
 @media only screen and (max-width: 1300px) {
     .terminal {
@@ -159,10 +160,6 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-    #terminal-text {
-        height: 200px;
-        width: 100%;
-    }
     .banner h1 {
         font-size: 2.5rem;
     }
