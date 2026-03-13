@@ -57,11 +57,13 @@
 }
 .main-menu ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--color-1);
+    font-family: 'Chakra Petch';
 }
-img.github {
-    height: 50px;
-    display: none;
+
+.main-menu .imgs img {
+    height: 30px;
+    margin-inline: 10px;
 }
 
 

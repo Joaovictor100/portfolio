@@ -16,7 +16,9 @@
 }
 
 h1,h2,h3,h4 {
-    font-family: 'Chakra Petch';
+    font-family: 'Google Sans';
+    color: var(--color-4);
+    font-size: 1.5rem;
 }
 a {
     color: var(--color-1);
@@ -27,7 +29,7 @@ a {
 }
 #terminal-text {
     display: flex;
-    height: calc(12vw + 10px);
+    height: calc(180px);
     width: 50%;
 }
 main {
@@ -97,8 +99,6 @@ body {
     margin-bottom: 40px;
 }
 .perfil-git-hub {
-    background-color: rgba(255, 255, 255, 0.021);
-    backdrop-filter: blur(15px);
     width: min-content;
     text-transform: uppercase;
     font-weight: 700;
@@ -117,6 +117,14 @@ body {
 
 .sobre {
     width: 100%;
+    display: flex;
+}
+.sobre .container {
+    width: 70%;
+    margin-inline: auto;
+    border: 1px solid var(--color-5);
+    border-radius: 20px;
+    padding: 20px;
 }
 .sobre .content {
     display: flex;
