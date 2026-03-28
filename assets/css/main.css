@@ -23,6 +23,8 @@ h1,h2,h3,h4 {
 a {
     color: var(--color-1);
 }
+
+
 ::selection {
     background: var(--color-2);
     color: var(--color-1);
@@ -59,6 +61,7 @@ main {
 body {
     background: linear-gradient(-45deg, var(--color-2), #03070a, #071018, #071018, #03070a, var(--color-2));
     background-size: 400% 400%;
+    font-family: 'Google Sans';
     color: var(--color-3);
     animation: moverBackg 10s ease infinite alternate;
 }
@@ -120,24 +123,34 @@ body {
     display: flex;
 }
 .sobre .container {
-    width: 70%;
+    width: min-content;
     margin-inline: auto;
     border: 1px solid var(--color-5);
     border-radius: 20px;
-    padding: 20px;
+    padding: 38px 55px;
 }
 .sobre .content {
+    width: 50vw;
+    margin-block: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
+.sobre .text {
+    margin-right: 90px;
+    width: 60%;
+    height: 100%;
+}
 .sobre img {
-    width: 20vw;
-    border-radius: 20px;
+    width: 235px;
+    border-radius: 10%;
 }
 @media only screen and (max-width: 1300px) {
     .terminal {
         font-size: 0.85rem;
+    }
+    .sobre .content {
+        width: 80vw;
     }
     #terminal-text {
         width: 70%;
@@ -150,6 +163,25 @@ body {
     }
     body {
         font-size: 0.9rem;
+    }
+    .sobre .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 70vw;
+    }
+    .sobre h3 {
+        text-align: center;
+    }
+    .sobre .text {
+        order: 2;
+        text-align: center;
+        margin: 0;
+        width: 80%;
+    }
+    .sobre img {
+        order: 1;
+        margin-block: 40px;
     }
     .banner h1 {
         font-size: 3rem;

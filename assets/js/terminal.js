@@ -1,7 +1,7 @@
 const terminalText = document.querySelector('#terminal-text');
 
 const frases = [
-    'Possuo formação técnica em Desenvolvimento de Sistemas e, durante minha trajetória, tenho aprimorado habilidades e acumulado experiência no campo. Neste espaço, você poderá acessar meus projetos, habilidades, um resumo da minha trajetória e os objetivos que orientam minha carreira profissional'
+    'Possuo formação técnica em Desenvolvimento de Sistemas e tenho buscado constantemente aprimorar minhas habilidades. Aqui, você pode conferir meus projetos, competências e os objetivos que guiam minha carreira.'
 ];
 
 frases.forEach((frase, index) => {
