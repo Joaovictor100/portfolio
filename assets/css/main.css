@@ -304,6 +304,307 @@ h3 {
     transform: none;
 }
 
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.skills-group,
+.areas {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.skills-group h3,
+.areas h3 {
+    margin-bottom: 22px;
+    font-size: 1.1rem;
+}
+
+.skills-group ul {
+    display: grid;
+    gap: 20px;
+}
+
+.skill-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-strong);
+}
+
+.skill-top small {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.bar {
+    height: 6px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    box-shadow: 0 0 12px rgba(0, 236, 255, 0.5);
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.skills-group.visible .bar span {
+    width: var(--level);
+}
+
+.contact {
+    position: relative;
+    max-width: 720px;
+    margin-inline: auto;
+    padding: 56px 32px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* brilho no topo do cartão */
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--accent-2), transparent);
+}
+
+.contact h2 {
+    margin: 10px 0 16px;
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+}
+
+.contact > p:not(.eyebrow) {
+    max-width: 46ch;
+    margin: 0 auto 32px;
+}
+
+.contact .btn {
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    word-break: break-all;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 28px;
+    margin-top: 32px;
+}
+
+.contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    transition: color 0.25s;
+}
+
+.contact-links a:hover {
+    color: var(--accent);
+}
+
+.contact-links img {
+    width: 20px;
+    height: 20px;
+}
+
+/* =========================================================
+   timeline.css — linha do tempo da trajetória
+   Estrutura: <ol class="timeline"> > <li class="tl-item"> > .card
+   ========================================================= */
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+/* linha central com degradê e brilho */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, transparent, var(--accent) 10%, var(--accent-2) 90%, transparent);
+    box-shadow: 0 0 14px rgba(0, 236, 255, 0.45);
+}
+
+.tl-item {
+    position: relative;
+    width: 50%;
+    padding: 0 48px 56px 0;
+}
+
+.tl-item:last-child {
+    padding-bottom: 0;
+}
+
+/* itens pares vão para a direita */
+.tl-item:nth-child(even) {
+    margin-left: 50%;
+    padding: 0 0 56px 48px;
+}
+
+.tl-item:nth-child(even):last-child {
+    padding-bottom: 0;
+}
+
+/* ponto na linha */
+.tl-item::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    right: -7px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 4px rgba(0, 236, 255, 0.15), 0 0 16px var(--accent);
+}
+
+.tl-item:nth-child(even)::after {
+    right: auto;
+    left: -7px;
+}
+
+/* conector entre o ponto e o cartão */
+.tl-item::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    right: 0;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(to left, var(--accent), transparent);
+}
+
+.tl-item:nth-child(even)::before {
+    right: auto;
+    left: 0;
+    background: linear-gradient(to right, var(--accent), transparent);
+}
+
+/* ---------- Cartão ---------- */
+.timeline .card {
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.timeline .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 236, 255, 0.5);
+    box-shadow: 0 10px 40px -10px rgba(0, 236, 255, 0.25);
+}
+
+.year {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 10px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(0, 236, 255, 0.3);
+    border-radius: 6px;
+}
+
+.timeline h3 {
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+
+.timeline p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+/* ---------- Animação de entrada (usa a classe .visible do scroll.js) ---------- */
+.js .tl-item {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js .tl-item.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Celular: tudo em uma coluna ---------- */
+@media (max-width: 720px) {
+    .timeline::before {
+        left: 14px;
+        transform: none;
+    }
+
+    .tl-item,
+    .tl-item:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0 40px 48px;
+    }
+
+    .tl-item:last-child,
+    .tl-item:nth-child(even):last-child {
+        padding-bottom: 0;
+    }
+
+    .tl-item::after,
+    .tl-item:nth-child(even)::after {
+        left: 8px;
+        right: auto;
+    }
+
+    .tl-item::before,
+    .tl-item:nth-child(even)::before {
+        left: 22px;
+        right: auto;
+        width: 22px;
+        background: linear-gradient(to right, var(--accent), transparent);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .js .tl-item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
