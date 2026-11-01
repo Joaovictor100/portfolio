@@ -168,3 +168,73 @@
         font-size: 1.1rem;
     }
 }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 236, 255, 0.5);
+    box-shadow: 0 14px 40px -14px rgba(0, 236, 255, 0.3);
+}
+
+.project-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.project h3 {
+    margin: 10px 0;
+    font-size: 1.25rem;
+}
+
+.project p {
+    flex: 1;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.project .tags {
+    margin-bottom: 20px;
+}
+
+.project-link {
+    font-family: var(--font-head);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-soon {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.projects-more {
+    margin-top: 36px;
+    text-align: center;
+    color: var(--muted);
+}
+
+.projects-more a:hover {
+    text-decoration: underline;
+}

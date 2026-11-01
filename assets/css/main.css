@@ -62,6 +62,270 @@ main {
 .no-bold {
     font-weight: normal;
 }
+/* =========================================================
+   main.css — variáveis, reset, tipografia, botões e hero
+   ========================================================= */
+
+:root {
+    /* Cores (a paleta original foi mantida: ciano + azul-marinho) */
+    --bg: #070d14;
+    --bg-soft: #0a1a27;
+    --surface: rgba(255, 255, 255, 0.04);
+    --border: rgba(255, 255, 255, 0.09);
+    --text: #c5d0de;
+    --text-strong: #f1f5fa;
+    --muted: #8a9bb3;
+    --accent: #00ecff;
+    --accent-2: #8b5cf6;
+    --accent-soft: rgba(0, 236, 255, 0.1);
+
+    /* Tipografia */
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-head: 'Chakra Petch', 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+
+    /* Medidas */
+    --radius: 14px;
+    --header-h: 72px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 8px);
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Fundo tech: brilhos suaves + grade (fixo, sem pesar na rolagem) */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        radial-gradient(700px circle at 12% 0%, rgba(139, 92, 246, 0.14), transparent 60%),
+        radial-gradient(700px circle at 90% 100%, rgba(0, 236, 255, 0.10), transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: auto, auto, 44px 44px, 44px 44px;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-head);
+    color: var(--text-strong);
+    line-height: 1.15;
+}
+
+/* ---------- Utilitários ---------- */
+.container {
+    width: min(1100px, 100% - 40px);
+    margin-inline: auto;
+}
+
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+/* ---------- Botões ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 28px;
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 28px rgba(0, 236, 255, 0.45);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--accent);
+}
+
+.btn-ghost:hover {
+    background: var(--accent-soft);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: calc(var(--header-h) + 40px) 0 80px;
+}
+
+.hero h1 {
+    margin-top: 14px;
+    font-size: clamp(2.8rem, 9vw, 5.6rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.hero h2 {
+    font-size: clamp(1.7rem, 5vw, 3.2rem);
+    font-weight: 600;
+    color: #96afcf;
+    margin-bottom: 36px;
+}
+
+/* Caixa de "terminal" com o texto digitado */
+.terminal {
+    max-width: 640px;
+    padding: 18px 20px;
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--muted);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-left: 2px solid var(--accent);
+    border-radius: 10px;
+}
+
+.terminal::before {
+    content: '>> ';
+    color: var(--accent);
+}
+
+.terminal::after {
+    content: '_';
+    color: var(--accent);
+    animation: blink 1s steps(1) infinite;
+}
+
+.terminal.done::after {
+    display: none;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 36px;
+}
+
+/* ---------- Rodapé ---------- */
+.site-footer {
+    padding: 32px 20px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+}
+
+/* ---------- Animações de entrada ---------- */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js .reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .terminal::after {
+        animation: none;
+    }
+}
+
+@media (max-width: 520px) {
+    .btn {
+        width: 100%;
+    }
+}
+
 body {
     background: linear-gradient(-45deg, var(--color-2), #03070a, #071018, #071018, #03070a, var(--color-2));
     background-size: 400% 400%;
