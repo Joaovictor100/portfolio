@@ -37,6 +37,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: calc(var(--header-h) + 8px);
+    scrollbar-color: var(--muted) var(--bg-soft); 
 }
 
 body {
