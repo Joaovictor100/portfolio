@@ -1,62 +1,171 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portifólio - JVSTS</title>
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="assets/css/menu.css" type="text/css" media="all" />
+    <title>João Victor | Portfólio</title>
+    <meta name="description" content="Portfólio de João Victor, estudante de Análise e Desenvolvimento de Sistemas. Projetos em C, Python e machine learning.">
+    <meta name="theme-color" content="#070d14">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070d14'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' text-anchor='middle' fill='%2300ecff'%3EJV%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/sections.css">
+    <link rel="stylesheet" href="assets/css/timeline.css">
+
+    <!-- Marca que o JavaScript está ativo (as animações de entrada só rodam com ele) -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-    <div class="page-main">
-        <header class="main-header">
-            <div class="hamburguer">
+
+    <!-- ================= CABEÇALHO / MENU ================= -->
+    <header class="site-header" id="topo">
+        <div class="header-inner">
+            <a class="logo" href="#inicio" aria-label="Ir para o início">
+                <span>&lt;</span>JVSTS<span>/&gt;</span>
+            </a>
+
+            <button class="hamburguer" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            <nav class="main-menu">
-                <h2>Menu Principal</h2>
-                <div class="imgs">
-                    <a href="https://github.com/Joaovictor100"><img src="assets/img/github.svg" alt="GitHub"></a>
-                    <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-soares-36368423b/"><img src="assets/img/linkedin.svg" alt="LinkedIn"></a>
-                    <a href="https://www.instagram.com/_jv.soarezz_/"><img src="assets/img/instagram.svg" alt="Intagram"></a>
-                </div>
+            </button>
+
+            <div class="menu-backdrop"></div>
+
+            <nav class="main-menu" id="menu" aria-label="Menu principal">
                 <ul>
                     <li><a href="#sobre-mim">Sobre mim</a></li>
-                    <li><a href="#linha-tempo">Formação</a></li>
-                    <li><a href="">Habilidades</a></li>
-                    <li><a href="">Projetos</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#trajetoria">Trajetória</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
-            </nav>
-        </header>
-        <main>
-            <section class="banner">
-                <div class="text">
-                    <p class="text-term-color-1">Olá, meu nome é</p>
-                    <h1>João Victor.</h1>
-                    <h2>Bem vindo ao meu portifólio.</h2>
-                    <div id="terminal-text"></div>
-                    <div class="perfil-git-hub"><a href="https://github.com/Joaovictor100">Ver Projetos</a></div>
+                <div class="social">
+                    <a href="https://github.com/Joaovictor100" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img src="assets/img/github.svg" alt=""></a>
+                    <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-soares-36368423b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/img/linkedin.svg" alt=""></a>
+                    <a href="https://www.instagram.com/_jv.soarezz_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/img/instagram.svg" alt=""></a>
                 </div>
-            </section>
-            <section class="sobre" id="sobre-mim">
-                <div class="container">
-                    <div class="content">
-                        <div class="text">
-                            <h3>Sobre mim</h3>
-                            <p> Desde os 13 anos, sou apaixonado por tecnologia e trabalho com desenvolvimento de sistemas. Iniciei minha trajetória programando Arduínos com C++, desenvolvendo projetos que trabalhavam com entradas, saídas e controle de pinos.
-                            <br><br>
-                            Entrei na ETEC Machado de Assis aos 15 anos, onde adquiri conhecimentos teóricos fundamentais para minha trajetória profissional. Atualmente, estou fazendo o curso técnico superior em Análise e Desenvolvimento de Sistemas (Semipresencial) na UNIP, participando de projetos práticos em grupo.
-                            <br><br>
-                            Além da faculdade, dedico-me ao estudo autodidata, explorando novas tecnologias e aprofundando meus conhecimentos em segurança da informação.</p>
-                        </div>
-                        <img src="assets/img/perfil.jpg" alt="Sobre mim">
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= INÍCIO ================= -->
+        <section class="hero" id="inicio">
+            <div class="container">
+                <p class="eyebrow">Olá, meu nome é</p>
+                <h1>João Victor.</h1>
+                <h2>Bem-vindo ao meu portfólio.</h2>
+
+                <!-- O texto é digitado pelo terminal.js -->
+                <p class="terminal" id="terminal-text"></p>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+                    <a class="btn btn-ghost" href="#contato">Entrar em contato</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SOBRE MIM ================= -->
+        <section class="section" id="sobre-mim">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">// 01 · sobre</p>
+                    <h2>Sobre mim</h2>
+                </div>
+
+                <div class="about reveal">
+                    <div class="about-text">
+                        <p>Desde os 13 anos, sou apaixonado por tecnologia e trabalho com desenvolvimento de sistemas. Iniciei minha trajetória programando Arduínos com C++, desenvolvendo projetos que trabalhavam com entradas, saídas e controle de pinos.</p>
+                        <p>Entrei na ETEC Machado de Assis aos 15 anos, onde adquiri conhecimentos teóricos fundamentais para minha trajetória profissional. Atualmente, estou fazendo o curso superior de tecnologia em Análise e Desenvolvimento de Sistemas (semipresencial) na UNIP, participando de projetos práticos em grupo.</p>
+                        <p>Além da faculdade, dedico-me ao estudo autodidata, explorando novas tecnologias e aprofundando meus conhecimentos em segurança da informação.</p>
+
+                        <ul class="facts">
+                            <li><strong>Desde os 13</strong><span>primeiros projetos com Arduino</span></li>
+                            <li><strong>C e Python</strong><span>minhas linguagens principais</span></li>
+                            <li><strong>ADS · UNIP</strong><span>curso em andamento</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="about-photo">
+                        <img src="assets/img/perfil.jpg" alt="Foto de João Victor" width="896" height="1101" loading="lazy">
                     </div>
                 </div>
-            </section>
-            <section class="section" id="projetos">
+            </div>
+        </section>
+
+        <!-- ================= HABILIDADES ================= -->
+        <section class="section" id="habilidades">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">// 02 · habilidades</p>
+                    <h2>Habilidades</h2>
+                </div>
+
+                <div class="skills-grid">
+
+                    <div class="skills-group reveal">
+                        <h3>Mais experiência</h3>
+                        <!-- Para mudar o nível, altere o valor de --level (de 0% a 100%) -->
+                        <ul>
+                            <li class="skill" style="--level: 85%">
+                                <div class="skill-top"><span>C</span><small>Sólido</small></div>
+                                <div class="bar"><span></span></div>
+                            </li>
+                            <li class="skill" style="--level: 80%">
+                                <div class="skill-top"><span>Python</span><small>Sólido</small></div>
+                                <div class="bar"><span></span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-group reveal">
+                        <h3>Conhecimento básico</h3>
+                        <ul>
+                            <li class="skill" style="--level: 40%">
+                                <div class="skill-top"><span>JavaScript</span><small>Básico</small></div>
+                                <div class="bar"><span></span></div>
+                            </li>
+                            <li class="skill" style="--level: 40%">
+                                <div class="skill-top"><span>Java</span><small>Básico</small></div>
+                                <div class="bar"><span></span></div>
+                            </li>
+                            <li class="skill" style="--level: 40%">
+                                <div class="skill-top"><span>C#</span><small>Básico</small></div>
+                                <div class="bar"><span></span></div>
+                            </li>
+                            <li class="skill" style="--level: 35%">
+                                <div class="skill-top"><span>Assembly x86 (Intel)</span><small>Básico</small></div>
+                                <div class="bar"><span></span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="areas reveal">
+                    <h3>Áreas de estudo</h3>
+                    <ul class="tags">
+                        <li>Ponteiros e memória</li>
+                        <li>Programação de baixo nível</li>
+                        <li>Machine learning</li>
+                        <li>Redes neurais</li>
+                        <li>Segurança da informação</li>
+                        <li>Arduino</li>
+                        <li>Desenvolvimento de jogos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJETOS ================= -->
+        <section class="section" id="projetos">
             <div class="container">
                 <div class="section-head reveal">
                     <p class="eyebrow">// 03 · projetos</p>
@@ -118,66 +227,8 @@
                 </p>
             </div>
         </section>
-        <section class="section" id="habilidades">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow">// 02 · habilidades</p>
-                    <h2>Habilidades</h2>
-                </div>
 
-                <div class="skills-grid">
-
-                    <div class="skills-group reveal">
-                        <h3>Mais experiência</h3>
-                        <!-- Para mudar o nível, altere o valor de --level (de 0% a 100%) -->
-                        <ul>
-                            <li class="skill" style="--level: 85%">
-                                <div class="skill-top"><span>C</span><small>Sólido</small></div>
-                                <div class="bar"><span></span></div>
-                            </li>
-                            <li class="skill" style="--level: 80%">
-                                <div class="skill-top"><span>Python</span><small>Sólido</small></div>
-                                <div class="bar"><span></span></div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="skills-group reveal">
-                        <h3>Conhecimento básico</h3>
-                        <ul>
-                            <li class="skill" style="--level: 40%">
-                                <div class="skill-top"><span>JavaScript</span><small>Básico</small></div>
-                                <div class="bar"><span></span></div>
-                            </li>
-                            <li class="skill" style="--level: 40%">
-                                <div class="skill-top"><span>Java</span><small>Básico</small></div>
-                                <div class="bar"><span></span></div>
-                            </li>
-                            <li class="skill" style="--level: 40%">
-                                <div class="skill-top"><span>C#</span><small>Básico</small></div>
-                                <div class="bar"><span></span></div>
-                            </li>
-                            <li class="skill" style="--level: 35%">
-                                <div class="skill-top"><span>Assembly x86 (Intel)</span><small>Básico</small></div>
-                                <div class="bar"><span></span></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="areas reveal">
-                    <h3>Áreas de estudo</h3>
-                    <ul class="tags">
-                        <li>Ponteiros e memória</li>
-                        <li>Programação de baixo nível</li>
-                        <li>Machine learning</li>
-                        <li>Redes neurais</li>
-                        <li>Segurança da informação</li>
-                        <li>Arduino</li>
-                        <li>Desenvolvimento de jogos</li>
-                    </ul>
-                </div>
-            </div>
+        <!-- ================= TRAJETÓRIA (linha do tempo) ================= -->
         <section class="section" id="trajetoria">
             <div class="container">
                 <div class="section-head reveal">
@@ -250,10 +301,15 @@
                 </div>
             </div>
         </section>
-        </main>
-    </div>
-    <script src="assets/js/menu.js" type="text/javascript" charset="utf-8"></script>
-    <script src="assets/js/scroll.js" type="text/javascript" charset="utf-8"></script>
-    <script src="assets/js/terminal.js" type="text/javascript" charset="utf-8"></script>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="ano">2026</span> João Victor · JVSTS</p>
+    </footer>
+
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/scroll.js"></script>
+    <script src="assets/js/terminal.js"></script>
 </body>
 </html>

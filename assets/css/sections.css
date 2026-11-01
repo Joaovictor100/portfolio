@@ -1,0 +1,368 @@
+/* =========================================================
+   sections.css — sobre, habilidades, projetos e contato
+   ========================================================= */
+
+.section {
+    padding-block: 96px;
+}
+
+.section-head {
+    margin-bottom: 48px;
+}
+
+.section-head h2 {
+    margin-top: 10px;
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+}
+
+/* barrinha em degradê embaixo do título */
+.section-head h2::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    margin-top: 16px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+/* ---------- Sobre mim ---------- */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 64px;
+    align-items: center;
+}
+
+.about-text p + p {
+    margin-top: 18px;
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.facts li {
+    padding: 14px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    line-height: 1.4;
+}
+
+.facts strong {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+    color: var(--accent);
+}
+
+.facts span {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.about-photo {
+    position: relative;
+}
+
+.about-photo img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+
+/* moldura deslocada atrás da foto */
+.about-photo::after {
+    content: "";
+    position: absolute;
+    inset: 16px -16px -16px 16px;
+    border: 1px solid var(--accent);
+    border-radius: 18px;
+    opacity: 0.55;
+}
+
+/* ---------- Habilidades ---------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.skills-group,
+.areas {
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.skills-group h3,
+.areas h3 {
+    margin-bottom: 22px;
+    font-size: 1.1rem;
+}
+
+.skills-group ul {
+    display: grid;
+    gap: 20px;
+}
+
+.skill-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-strong);
+}
+
+.skill-top small {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.bar {
+    height: 6px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    box-shadow: 0 0 12px rgba(0, 236, 255, 0.5);
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.skills-group.visible .bar span {
+    width: var(--level);
+}
+
+/* sem JavaScript, as barras já aparecem preenchidas */
+html:not(.js) .bar span {
+    width: var(--level);
+}
+
+.areas {
+    margin-top: 24px;
+}
+
+.areas h3 {
+    margin-bottom: 16px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags li {
+    padding: 6px 14px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(0, 236, 255, 0.28);
+    border-radius: 999px;
+}
+
+.tags.small li {
+    padding: 3px 10px;
+    font-size: 0.72rem;
+}
+
+/* ---------- Projetos ---------- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 236, 255, 0.5);
+    box-shadow: 0 14px 40px -14px rgba(0, 236, 255, 0.3);
+}
+
+.project-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.project h3 {
+    margin: 10px 0;
+    font-size: 1.25rem;
+}
+
+.project p {
+    flex: 1;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.project .tags {
+    margin-bottom: 20px;
+}
+
+.project-link {
+    font-family: var(--font-head);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-soon {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.projects-more {
+    margin-top: 36px;
+    text-align: center;
+    color: var(--muted);
+}
+
+.projects-more a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Contato ---------- */
+.contact {
+    position: relative;
+    max-width: 720px;
+    margin-inline: auto;
+    padding: 56px 32px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* brilho no topo do cartão */
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--accent-2), transparent);
+}
+
+.contact h2 {
+    margin: 10px 0 16px;
+    font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+}
+
+.contact > p:not(.eyebrow) {
+    max-width: 46ch;
+    margin: 0 auto 32px;
+}
+
+.contact .btn {
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    word-break: break-all;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 28px;
+    margin-top: 32px;
+}
+
+.contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    transition: color 0.25s;
+}
+
+.contact-links a:hover {
+    color: var(--accent);
+}
+
+.contact-links img {
+    width: 20px;
+    height: 20px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 860px) {
+    .section {
+        padding-block: 72px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .about-photo {
+        order: -1;
+        width: min(260px, 70%);
+        margin-inline: auto;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .facts {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-group,
+    .areas,
+    .project {
+        padding: 22px;
+    }
+
+    .contact {
+        padding: 40px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bar span {
+        transition: none;
+    }
+}
